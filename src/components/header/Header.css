@@ -1,0 +1,43 @@
+.header {
+  color: white;
+  display: flex;
+  font-weight: bold;
+  font-size: large;
+  padding: 1rem;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.header-text-left {
+  padding-left: 12px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  padding-left: 5rem;
+  color: white;
+  text-decoration: none;
+
+}
+
+.header-left {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center; 
+}
+
+.header-right {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  
+  }
+}

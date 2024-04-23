@@ -1,0 +1,15 @@
+.flights-container {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  flex-direction: column;
+  align-items: center;
+}
+
+#table-container {
+  width: 80%;
+}
+ .departure-board {
+margin-bottom: 3rem;
+ }
+

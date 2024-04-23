@@ -1,0 +1,32 @@
+.journey-image-container {
+  background-image: url(../assets/images/pricing.jpg);
+  height: 45rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.top-section-content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.drop-down-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30%;
+  padding: 10px;
+}
+
+.calculate-journey {
+  color: white;
+}
+.searchResultPrices {
+  border: 2px red solid;
+}

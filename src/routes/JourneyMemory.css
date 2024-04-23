@@ -1,0 +1,12 @@
+.journey-container{
+background-image: url(../assets/images/journey.jpg);
+height: 50rem;
+background-repeat: no-repeat;
+background-position: top;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+

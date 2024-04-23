@@ -1,0 +1,10 @@
+.footer-container {
+    height: 5rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 8px;
+    font-size: 7px;
+}
