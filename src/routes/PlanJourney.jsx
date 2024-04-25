@@ -16,24 +16,24 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
 import { useState } from "react";
+import { ClassSharp } from "@mui/icons-material";
 
 const PlanJourney = () => {
   const dispatch = useDispatch();
   const departures = useSelector((state) => state.starSeeker.departures);
   const fromLocation = useSelector((state) => state.starSeeker.fromLocation);
   const toLocation = useSelector((state) => state.starSeeker.toLocation);
-  const [journeyPrice, setJourneyPrice] = useState({});
-  console.log("it is = ", journeyPrice);
+  const [journey, setJourney] = useState();
+
   const callCostsFetch = async () => {
     const pricingResult = await transportCost(fromLocation, toLocation); // departuresResult is that result of the API
-    setJourneyPrice(pricingResult); // setJourneyPrice has now reassigned costs ([]) to be departuresResult
+    setJourney(pricingResult); // setjourney has now reassigned costs ([]) to be departuresResult
   };
   return (
     <div className="journey-image-container">
       <div className="top-section-content">
         <p className="section-title">
           Plan your <span style={{ fontWeight: 800 }}>journey</span>
-          <p> ${journeyPrice?.totalCost}</p>
         </p>
         <div className="drop-down-boxes">
           <Box sx={{ minWidth: 120 }}>
@@ -83,41 +83,52 @@ const PlanJourney = () => {
               </Select>
             </FormControl>
           </Box>
-          <Button
-            variant="contained"
-            onClick={callCostsFetch}
-            style={{ backgroundColor: "#ffcf33" }}
-            endIcon={<ConnectingAirportsOutlinedIcon />}
-          >
-            Search
-          </Button>
+          <div className="searchResultPrices">
+            <Button
+              variant="contained"
+              onClick={callCostsFetch}
+              style={{ backgroundColor: "#ffcf33" }}
+              endIcon={<ConnectingAirportsOutlinedIcon />}
+            >
+              Search
+            </Button>
+          </div>
+        </div>
+        <div className="searchResultPrices">
+          {journey ? (
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                sx={{ height: 50 }}
+                image="/static/images/cards/contemplative-reptile.jpg" //TO_DO: make link to images of different planets eac time
+                title="destination-card"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h3" component="div">
+                  {journey.to.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  <p> from ${journey?.totalCost}</p>
+                </Typography>
+              </CardContent>
+              <CardActions>
+                {/* <Button size="small">
+                  Need parking details beofre you go to {journey.to.name}?
+                </Button> */}
+                {journey.route
+                  .filter(
+                    (_, index) =>
+                      index !== journey.route.length - 1 && index !== 0
+                  )
+                  .map((transfer, index) => {
+                    return <p key={index}>{`your route = ${transfer}`}</p>;
+                  })}
+              </CardActions>
+            </Card>
+          ) : null}
         </div>
       </div>
-      <div className='searchResultPrices'>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card>
-      </div>
-      </div>
-
-  
-)};
+    </div>
+  );
+};
 
 export default PlanJourney;
