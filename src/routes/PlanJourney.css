@@ -28,5 +28,5 @@
   color: transparent;
 }
 .searchResultPrices {
-  border: 2px red solid;
+  display: flex;
 }
