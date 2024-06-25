@@ -107,7 +107,7 @@ const PlanJourney = () => {
                   {journey.to.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  <p> from ${journey?.totalCost}</p>
+                  <p> Starting from ${journey?.totalCost}</p>
                 </Typography>
               </CardContent>
               <CardActions>
