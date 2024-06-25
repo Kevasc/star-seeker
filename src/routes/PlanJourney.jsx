@@ -97,7 +97,7 @@ const PlanJourney = () => {
         </div>
         <div className="searchResultPrices">
           {journey ? (
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 200 }}>
               <CardMedia
                 sx={{ height: 140 }}
                 // image="/static/images/cards/contemplative-reptile.jpg" // TODO: replace with dynamic images based on the destination
@@ -123,7 +123,7 @@ const PlanJourney = () => {
                       variant="body2"
                       color="text.primary"
                     >
-                      {`Your route: ${transfer}`}
+                      {`Your route will include stopovers in: ${transfer}`}
                     </Typography>
                   ))}
               </CardActions>
