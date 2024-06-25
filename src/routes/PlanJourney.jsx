@@ -17,18 +17,23 @@ import Typography from "@mui/material/Typography";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
 import { useState } from "react";
 
-
 const PlanJourney = () => {
   const dispatch = useDispatch();
   const departures = useSelector((state) => state.starSeeker.departures);
   const fromLocation = useSelector((state) => state.starSeeker.fromLocation);
   const toLocation = useSelector((state) => state.starSeeker.toLocation);
-  const [journey, setJourney] = useState();
+  const [journey, setJourney] = useState(null);
 
   const callCostsFetch = async () => {
-    const pricingResult = await transportCost(fromLocation, toLocation); // departuresResult is that result of the API
-    setJourney(pricingResult); // setjourney has now reassigned costs ([]) to be departuresResult
+    try {
+      const pricingResult = await transportCost(fromLocation, toLocation);
+      setJourney(pricingResult);
+    } catch (error) {
+      console.error("Error fetching transport costs:", error);
+      setJourney(null);
+    }
   };
+
   return (
     <div className="journey-image-container">
       <div className="top-section-content">
@@ -38,51 +43,47 @@ const PlanJourney = () => {
         <div className="drop-down-boxes">
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">From</InputLabel>
+              <InputLabel id="from-location-label">From</InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="from-location-label"
+                id="from-location-select"
                 value={fromLocation}
-                style={({ color: "white" }, { backgroundColor: "white" })}
-                label="Destination"
+                style={{ backgroundColor: "white" }}
+                label="From"
                 onChange={(event) =>
                   dispatch(setFromLocation(event.target.value))
                 }
               >
-                {departures.map((destination) => {
-                  //departures is in curly brackets becasue its read as javascript and not just a string
-                  return (
-                    <MenuItem key={destination.code} value={destination.code}>
-                      {destination.name}
-                    </MenuItem> //we are now able to access the destinations using the drop down box
-                  );
-                })}
+                {departures.map((destination) => (
+                  <MenuItem key={destination.code} value={destination.code}>
+                    {destination.name}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Box>
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">To</InputLabel>
+              <InputLabel id="to-location-label">To</InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="to-location-label"
+                id="to-location-select"
                 value={toLocation}
-                style={({ color: "white" }, { backgroundColor: "white" })}
-                label="Destination"
+                style={{ backgroundColor: "white" }}
+                label="To"
                 onChange={(event) =>
                   dispatch(setToLocation(event.target.value))
                 }
               >
-                {departures.map((destination) => {
-                  return (
-                    <MenuItem key={destination.code} value={destination.code}>
-                      {destination.name}
-                    </MenuItem>
-                  );
-                })}
+                {departures.map((destination) => (
+                  <MenuItem key={destination.code} value={destination.code}>
+                    {destination.name}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Box>
+
           <div className="searchResultPrices">
             <Button
               variant="contained"
@@ -98,30 +99,33 @@ const PlanJourney = () => {
           {journey ? (
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
-                sx={{ height: 50 }}
-                image="/static/images/cards/contemplative-reptile.jpg" //TO_DO: make link to images of different planets each time
+                sx={{ height: 140 }}
+                // image="/static/images/cards/contemplative-reptile.jpg" // TODO: replace with dynamic images based on the destination
                 title="destination-card"
               />
               <CardContent>
-                <Typography gutterBottom variant="h3" component="div">
+                <Typography gutterBottom variant="h5" component="div">
                   {journey.to.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  <p> Starting from ${journey?.totalCost}</p>
+                  Starting from ${journey.totalCost}
                 </Typography>
               </CardContent>
               <CardActions>
-                {/* <Button size="small">
-                  Need parking details beofre you go to {journey.to.name}?
-                </Button> */}
                 {journey.route
                   .filter(
                     (_, index) =>
                       index !== journey.route.length - 1 && index !== 0
                   )
-                  .map((transfer, index) => {
-                    return <p key={index}>{`your route = ${transfer}`}</p>;
-                  })}
+                  .map((transfer, index) => (
+                    <Typography
+                      key={index}
+                      variant="body2"
+                      color="text.primary"
+                    >
+                      {`Your route: ${transfer}`}
+                    </Typography>
+                  ))}
               </CardActions>
             </Card>
           ) : null}
