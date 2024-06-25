@@ -23,6 +23,9 @@
   width: 30%;
   padding: 10px;
 }
+.section-title {
+  margin-bottom: 60px;
+}
 
 .calculate-journey {
   color: transparent;
