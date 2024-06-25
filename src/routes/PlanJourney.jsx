@@ -48,7 +48,7 @@ const PlanJourney = () => {
                 labelId="from-location-label"
                 id="from-location-select"
                 value={fromLocation}
-                style={{ backgroundColor: "white" }}
+                style={{ backgroundColor: "white", color: 'black' }}
                 label="From"
                 onChange={(event) =>
                   dispatch(setFromLocation(event.target.value))
