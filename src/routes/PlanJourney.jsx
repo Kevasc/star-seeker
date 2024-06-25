@@ -123,7 +123,7 @@ const PlanJourney = () => {
                       variant="body2"
                       color="text.primary"
                     >
-                      {`Your route will include stopovers in: ${transfer}`}
+                      {`Your route will include stopovers in: ${transfer.split(' ,')}`}
                     </Typography>
                   ))}
               </CardActions>
