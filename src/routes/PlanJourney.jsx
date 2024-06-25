@@ -105,7 +105,7 @@ const PlanJourney = () => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {journey.to.name}
+                  {journey.to.name.split(', ')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Starting from ${journey.totalCost}
@@ -123,7 +123,7 @@ const PlanJourney = () => {
                       variant="body2"
                       color="text.primary"
                     >
-                      {`Your route will include stopovers in: ${transfer.split(' ,')}`}
+                      {`Your route will include stopovers in: ${transfer}`}
                     </Typography>
                   ))}
               </CardActions>
