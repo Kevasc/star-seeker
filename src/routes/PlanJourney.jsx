@@ -99,7 +99,7 @@ const PlanJourney = () => {
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 50 }}
-                image="/static/images/cards/contemplative-reptile.jpg" //TO_DO: make link to images of different planets eac time
+                image="/static/images/cards/contemplative-reptile.jpg" //TO_DO: make link to images of different planets each time
                 title="destination-card"
               />
               <CardContent>
