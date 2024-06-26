@@ -41,7 +41,7 @@ const PlanJourney = () => {
           Plan your <span style={{ fontWeight: 800 }}>journey</span>
         </p>
         <div className="drop-down-boxes">
-          <Box sx={{ minWidth: 120 }}>
+          <Box sx={{ minWidth: 350 }}>
             <FormControl fullWidth>
               <InputLabel id="from-location-label">From</InputLabel>
               <Select
@@ -62,7 +62,7 @@ const PlanJourney = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ minWidth: 120 }}>
+          <Box sx={{ minWidth: 350 }}>
             <FormControl fullWidth>
               <InputLabel id="to-location-label">To</InputLabel>
               <Select
@@ -97,7 +97,7 @@ const PlanJourney = () => {
         </div>
         <div className="searchResultPrices">
           {journey ? (
-            <Card sx={{ maxWidth: 200 }}>
+            <Card sx={{ maxWidth: 350 }}>
               <CardMedia
                 sx={{ height: 140 }}
                 // image="/static/images/cards/contemplative-reptile.jpg" // TODO: replace with dynamic images based on the destination
