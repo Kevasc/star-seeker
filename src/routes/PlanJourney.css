@@ -13,18 +13,20 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
 }
 
 .drop-down-boxes {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 30%;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 1rem;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 1rem;
+  gap: 1rem;
+  width: 100%;
 }
+
 .section-title {
   margin-bottom: 60px;
 }
@@ -32,6 +34,7 @@
 .calculate-journey {
   color: transparent;
 }
+
 .searchResultPrices {
   display: flex;
 }
