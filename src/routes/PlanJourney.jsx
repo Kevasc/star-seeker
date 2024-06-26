@@ -20,6 +20,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 
 const PlanJourney = () => {
   const dispatch = useDispatch();
@@ -103,23 +104,29 @@ const PlanJourney = () => {
             Search
           </Button>
         </div>
-        {/* <div className="search-result-prices"> */}
-          {journey ? (
-            <div className='result-box'>
-              {/* <CardMedia
-                sx={{ maxWidth: 550 }}
-                // image="/static/images/cards/contemplative-reptile.jpg" // TODO: replace with dynamic images based on the destination
-                title="destination-card"
-              />
-              <CardContent>
+
+        {journey ? (
+          <div className="result-box">
+            <div className="from-to">
+              <div className="result-ports">
+                <p>{journey.from.name}</p>
                 <Typography gutterBottom variant="h5" component="div">
-                  {journey.to.name}
+                  {journey.from.code}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+              </div>
+              <EastOutlinedIcon />
+              <div className="result-ports">
+                <p>{journey.to.name}</p>
+                <Typography gutterBottom variant="h5" component="div">
+                  {journey.to.code}
+                </Typography>
+              </div>
+            </div>
+
+            {/* <Typography variant="body2" color="text.secondary">
                   Starting from ${journey.totalCost}
-                </Typography>
-              </CardContent>
-              <CardActions>
+                </Typography> */}
+            {/* <CardActions>
                 <Accordion>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -148,9 +155,8 @@ const PlanJourney = () => {
                   </AccordionDetails>
                 </Accordion>
               </CardActions> */}
-            </div>
-          ) : null}
-        {/* </div> */}
+          </div>
+        ) : null}
       </div>
     </div>
   );
