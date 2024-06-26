@@ -16,6 +16,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
 import { useState } from "react";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const PlanJourney = () => {
   const dispatch = useDispatch();
@@ -86,7 +90,7 @@ const PlanJourney = () => {
           <Button
             variant="contained"
             onClick={callCostsFetch}
-            style={{ backgroundColor: "#ffcf33", width:'100%' }}
+            style={{ backgroundColor: "#ffcf33", width: '100%' }}
             endIcon={<ConnectingAirportsOutlinedIcon />}
           >
             Search
@@ -102,27 +106,35 @@ const PlanJourney = () => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {journey.to.name.split(", ")}
+                  {journey.to.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Starting from ${journey.totalCost}
                 </Typography>
               </CardContent>
               <CardActions>
-                {journey.route
-                  .filter(
-                    (_, index) =>
-                      index !== journey.route.length - 1 && index !== 0
-                  )
-                  .map((transfer, index) => (
-                    <Typography
-                      key={index}
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      {`Your route will include stopovers in: ${transfer}`}
-                    </Typography>
-                  ))}
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>Your route will include stopovers in:</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    {journey.route
+                      .filter((_, index) => index !== journey.route.length - 1 && index !== 0)
+                      .map((transfer, index) => (
+                        <Typography
+                          key={index}
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          {transfer}
+                        </Typography>
+                      ))}
+                  </AccordionDetails>
+                </Accordion>
               </CardActions>
             </Card>
           ) : null}
