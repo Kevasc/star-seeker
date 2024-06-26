@@ -23,7 +23,7 @@
   padding: 1rem;
   background-color: white;
   border-radius: 1rem;
-  gap: 1rem;
+  gap: 3rem;
   width: 100%;
 }
 
@@ -35,6 +35,6 @@
   color: transparent;
 }
 
-.searchResultPrices {
+.search-result-prices {
   display: flex;
 }
