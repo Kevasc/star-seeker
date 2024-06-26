@@ -10,7 +10,7 @@
 
 .top-section-content {
   align-items: center;
-  justify-content: center;
+  margin-top: 9rem; 
   display: flex;
   flex-direction: column;
   width: 80%;
