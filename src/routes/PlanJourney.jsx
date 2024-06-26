@@ -16,10 +16,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
 import { useState } from "react";
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const PlanJourney = () => {
   const dispatch = useDispatch();
@@ -90,17 +90,24 @@ const PlanJourney = () => {
           <Button
             variant="contained"
             onClick={callCostsFetch}
-            style={{ backgroundColor: "#ffcf33", width: '100%' }}
+            sx={{
+              backgroundColor: "#ffcf33",
+              cursor: "pointer",
+              width: "100%",
+              "&:hover": {
+                cursor: "pointer", // Change the color when hovered
+              },
+            }}
             endIcon={<ConnectingAirportsOutlinedIcon />}
           >
             Search
           </Button>
         </div>
-        <div className="search-result-prices">
+        {/* <div className="search-result-prices"> */}
           {journey ? (
-            <Card sx={{ maxWidth: 350 }}>
-              <CardMedia
-                sx={{ height: 140, maxWidth: 350 }}
+            <div className='result-box'>
+              {/* <CardMedia
+                sx={{ maxWidth: 550 }}
                 // image="/static/images/cards/contemplative-reptile.jpg" // TODO: replace with dynamic images based on the destination
                 title="destination-card"
               />
@@ -119,26 +126,31 @@ const PlanJourney = () => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <Typography>Your route will include stopovers in:</Typography>
+                    <Typography>
+                      Your route will include stopovers in:
+                    </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     {journey.route
-                      .filter((_, index) => index !== journey.route.length - 1 && index !== 0)
+                      .filter(
+                        (_, index) =>
+                          index !== journey.route.length - 1 && index !== 0
+                      )
                       .map((transfer, index) => (
                         <Typography
                           key={index}
                           variant="body2"
-                          color="text.primary"
+                          color="text.primary" //  TODO: add no stops! if no stops on route
                         >
                           {transfer}
                         </Typography>
                       ))}
                   </AccordionDetails>
                 </Accordion>
-              </CardActions>
-            </Card>
+              </CardActions> */}
+            </div>
           ) : null}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
