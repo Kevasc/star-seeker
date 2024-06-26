@@ -14,7 +14,7 @@
 
 .top-section-content {
   align-items: center;
-  margin-top: 9rem; 
+  margin-top: 9rem;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -37,4 +37,14 @@
 
 .search-result-prices {
   display: flex;
+  padding: 4rem;
+  width: 100%;
+}
+
+.result-box {
+  border: 2px solid red;
+  height: 10rem;
+  width: 100%;
+  border-radius: 1rem;
+  margin-top: 3rem;
 }
