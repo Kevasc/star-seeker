@@ -8,6 +8,10 @@
   flex-direction: row;
 }
 
+.section-title {
+  margin-bottom: 60px;
+}
+
 .top-section-content {
   align-items: center;
   margin-top: 9rem; 
@@ -27,9 +31,6 @@
   width: 100%;
 }
 
-.section-title {
-  margin-bottom: 60px;
-}
 
 .calculate-journey {
   color: transparent;
