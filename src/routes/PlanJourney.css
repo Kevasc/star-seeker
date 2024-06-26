@@ -35,16 +35,25 @@
   color: transparent;
 }
 
-.search-result-prices {
-  display: flex;
-  padding: 4rem;
-  width: 100%;
-}
-
 .result-box {
-  border: 2px solid red;
-  height: 10rem;
+  display: flex;
+  justify-content: center;
   width: 100%;
   border-radius: 1rem;
   margin-top: 3rem;
+  background-color: white;
+}
+
+.from-to {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+
+.result-ports {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
