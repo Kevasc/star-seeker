@@ -48,7 +48,7 @@ const PlanJourney = () => {
                 labelId="from-location-label"
                 id="from-location-select"
                 value={fromLocation}
-                style={{ backgroundColor: "white", color: 'black' }}
+                style={{ backgroundColor: "white", color: "black" }}
                 label="From"
                 onChange={(event) =>
                   dispatch(setFromLocation(event.target.value))
@@ -83,29 +83,26 @@ const PlanJourney = () => {
               </Select>
             </FormControl>
           </Box>
-
-          <div className="searchResultPrices">
-            <Button
-              variant="contained"
-              onClick={callCostsFetch}
-              style={{ backgroundColor: "#ffcf33" }}
-              endIcon={<ConnectingAirportsOutlinedIcon />}
-            >
-              Search
-            </Button>
-          </div>
+          <Button
+            variant="contained"
+            onClick={callCostsFetch}
+            style={{ backgroundColor: "#ffcf33", width:'100%' }}
+            endIcon={<ConnectingAirportsOutlinedIcon />}
+          >
+            Search
+          </Button>
         </div>
-        <div className="searchResultPrices">
+        <div className="search-result-prices">
           {journey ? (
             <Card sx={{ maxWidth: 350 }}>
               <CardMedia
-                sx={{ height: 140 }}
+                sx={{ height: 140, maxWidth: 350 }}
                 // image="/static/images/cards/contemplative-reptile.jpg" // TODO: replace with dynamic images based on the destination
                 title="destination-card"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {journey.to.name.split(', ')}
+                  {journey.to.name.split(", ")}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Starting from ${journey.totalCost}
