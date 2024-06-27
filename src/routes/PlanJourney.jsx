@@ -1,13 +1,14 @@
+import { useState } from "react";
 import "./PlanJourney.css";
 import { transportCost } from "../api/api.js";
+import { useSelector } from "react-redux";
+import { setFromLocation, setToLocation } from "../redux/starSeekerSlice";
+import { useDispatch } from "react-redux";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { useSelector } from "react-redux";
-import { setFromLocation, setToLocation } from "../redux/starSeekerSlice";
-import { useDispatch } from "react-redux";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -15,7 +16,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
-import { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -122,39 +122,38 @@ const PlanJourney = () => {
                 </Typography>
               </div>
             </div>
-
-            {/* <Typography variant="body2" color="text.secondary">
-                  Starting from ${journey.totalCost}
-                </Typography> */}
-            {/* <CardActions>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>
-                      Your route will include stopovers in:
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {journey.route
-                      .filter(
-                        (_, index) =>
-                          index !== journey.route.length - 1 && index !== 0
-                      )
-                      .map((transfer, index) => (
-                        <Typography
-                          key={index}
-                          variant="body2"
-                          color="text.primary" //  TODO: add no stops! if no stops on route
-                        >
-                          {transfer}
-                        </Typography>
-                      ))}
-                  </AccordionDetails>
-                </Accordion>
-              </CardActions> */}
+            <div className="journey-cost">
+              <Typography variant="body2" color="text.secondary">
+                Starting from ${journey.totalCost}
+              </Typography>
+            </div>
+            <CardActions>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>Your route will include stopovers in:</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {journey.route
+                    .filter(
+                      (_, index) =>
+                        index !== journey.route.length - 1 && index !== 0
+                    )
+                    .map((transfer, index) => (
+                      <Typography
+                        key={index}
+                        variant="body2"
+                        color="text.primary" //  TODO: add no stops! if no stops on route
+                      >
+                        {transfer}
+                      </Typography>
+                    ))}
+                </AccordionDetails>
+              </Accordion>
+            </CardActions>
           </div>
         ) : null}
       </div>
