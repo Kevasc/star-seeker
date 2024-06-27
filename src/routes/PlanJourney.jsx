@@ -142,7 +142,7 @@ const PlanJourney = () => {
                         index !== journey.route.length - 1 && index !== 0
                     ).length === 0 ? (
                       <Typography variant="body2" color="text.primary">
-                        No stopovers!
+                        No stopovers on this route!
                       </Typography>
                     ) : (
                       journey.route
