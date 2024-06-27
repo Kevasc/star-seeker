@@ -133,7 +133,7 @@ const PlanJourney = () => {
                     id="panel1a-header"
                   >
                     <Typography>
-                      Your route will include stopovers in:
+                      Your route will include stopovers in
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
