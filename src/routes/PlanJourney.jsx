@@ -93,7 +93,7 @@ const PlanJourney = () => {
               cursor: "pointer",
               width: "100%",
               "&:hover": {
-                cursor: "pointer", // Change the color when hovered
+                cursor: "pointer",
               },
             }}
             endIcon={<ConnectingAirportsOutlinedIcon />}
@@ -137,20 +137,29 @@ const PlanJourney = () => {
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    {journey.route
-                      .filter(
-                        (_, index) =>
-                          index !== journey.route.length - 1 && index !== 0
-                      )
-                      .map((transfer, index) => (
-                        <Typography
-                          key={index}
-                          variant="body2"
-                          color="text.primary" //  TODO: add no stops! if no stops on route
-                        >
-                          {transfer}
-                        </Typography>
-                      ))}
+                    {journey.route.filter(
+                      (_, index) =>
+                        index !== journey.route.length - 1 && index !== 0
+                    ).length === 0 ? (
+                      <Typography variant="body2" color="text.primary">
+                        No stopovers!
+                      </Typography>
+                    ) : (
+                      journey.route
+                        .filter(
+                          (_, index) =>
+                            index !== journey.route.length - 1 && index !== 0
+                        )
+                        .map((transfer, index) => (
+                          <Typography
+                            key={index}
+                            variant="body2"
+                            color="text.primary"
+                          >
+                            {transfer}
+                          </Typography>
+                        ))
+                    )}
                   </AccordionDetails>
                 </Accordion>
               </CardActions>
