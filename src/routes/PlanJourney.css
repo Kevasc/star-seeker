@@ -67,4 +67,6 @@
 
 .stopover-dropdown-box {
   border: 2px solid orange;
+  display: flex;
+  justify-content: center;
 }
