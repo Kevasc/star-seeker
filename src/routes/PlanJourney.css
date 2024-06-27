@@ -65,4 +65,9 @@
 .journey-cost {
   display: flex;
   border: 2px solid lime;
+  align-items: center;
+}
+
+.stopover-dropdown-box {
+  border: 2px solid orange;
 }

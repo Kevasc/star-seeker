@@ -124,33 +124,37 @@ const PlanJourney = () => {
                 Starting from ${journey.totalCost}
               </Typography>
             </div>
-            <CardActions>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography>Your route will include stopovers in:</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  {journey.route
-                    .filter(
-                      (_, index) =>
-                        index !== journey.route.length - 1 && index !== 0
-                    )
-                    .map((transfer, index) => (
-                      <Typography
-                        key={index}
-                        variant="body2"
-                        color="text.primary" //  TODO: add no stops! if no stops on route
-                      >
-                        {transfer}
-                      </Typography>
-                    ))}
-                </AccordionDetails>
-              </Accordion>
-            </CardActions>
+            <div className="stopover-dropdown-box">
+              <CardActions>
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>
+                      Your route will include stopovers in:
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    {journey.route
+                      .filter(
+                        (_, index) =>
+                          index !== journey.route.length - 1 && index !== 0
+                      )
+                      .map((transfer, index) => (
+                        <Typography
+                          key={index}
+                          variant="body2"
+                          color="text.primary" //  TODO: add no stops! if no stops on route
+                        >
+                          {transfer}
+                        </Typography>
+                      ))}
+                  </AccordionDetails>
+                </Accordion>
+              </CardActions>
+            </div>
           </div>
         ) : null}
       </div>
