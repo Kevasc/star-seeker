@@ -31,9 +31,10 @@
   width: 100%;
 }
 
-.calculate-journey {
+/* .calculate-journey {
   color: transparent;
-}
+  border: 2px solid blue;
+} */
 
 .result-box {
   display: flex;
@@ -42,6 +43,7 @@
   border-radius: 1rem;
   margin-top: 3rem;
   background-color: white;
+  border: 2px solid pink;
 }
 
 .from-to {
@@ -49,6 +51,7 @@
   justify-content: space-evenly;
   width: 100%;
   align-items: center;
+  border: 2px solid red;
 }
 
 .result-ports {
@@ -56,4 +59,10 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  border: 2px solid blue;
+}
+
+.journey-cost {
+  display: flex;
+  border: 2px solid lime;
 }
