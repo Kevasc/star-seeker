@@ -137,7 +137,9 @@ const PlanJourney = () => {
                       Your route will include stopovers in
                     </Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails
+                    sx={{ display: "flex", justifyContent: "center" }}
+                  >
                     {journey.route.filter(
                       (_, index) =>
                         index !== journey.route.length - 1 && index !== 0
