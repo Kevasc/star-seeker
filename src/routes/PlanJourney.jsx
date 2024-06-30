@@ -120,10 +120,11 @@ const PlanJourney = () => {
               </div>
             </div>
             <div className="journey-cost">
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text">
                 Starting from ${journey.totalCost}
               </Typography>
             </div>
+
             <div className="stopover-dropdown-box">
               <CardActions>
                 <Accordion>
