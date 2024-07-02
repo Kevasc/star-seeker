@@ -13,6 +13,7 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
+import FlightTakeoffOutlinedIcon from "@mui/icons-material/FlightTakeoffOutlined";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -96,7 +97,7 @@ const PlanJourney = () => {
                 cursor: "pointer",
               },
             }}
-            endIcon={<ConnectingAirportsOutlinedIcon />}
+            endIcon={<FlightTakeoffOutlinedIcon />}
           >
             Search
           </Button>
