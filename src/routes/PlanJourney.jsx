@@ -138,7 +138,10 @@ const PlanJourney = () => {
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails
-                    sx={{ display: "flex", justifyContent: "center" }}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-evenly",
+                    }}
                   >
                     {journey.route.filter(
                       (_, index) =>
