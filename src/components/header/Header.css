@@ -6,6 +6,7 @@
   padding: 1rem;
   background-color: black;
   position: fixed;
+  z-index: 1;
   width: 100%;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
@@ -23,13 +24,12 @@
   padding-left: 5rem;
   color: white;
   text-decoration: none;
-
 }
 
 .header-left {
   display: flex;
   margin-left: 2rem;
-  align-items: center; 
+  align-items: center;
 }
 
 .header-right {
@@ -38,6 +38,5 @@
   justify-content: space-evenly;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
-  
   }
 }
