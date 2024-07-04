@@ -12,7 +12,6 @@ import Select from "@mui/material/Select";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
 import FlightTakeoffOutlinedIcon from "@mui/icons-material/FlightTakeoffOutlined";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -102,7 +101,6 @@ const PlanJourney = () => {
             Search
           </Button>
         </div>
-
         {journey ? (
           <div className="result-box">
             <div className="from-to">
@@ -125,7 +123,6 @@ const PlanJourney = () => {
                 Starting from ${journey.totalCost}
               </Typography>
             </div>
-
             <div className="stopover-dropdown-box">
               <CardActions>
                 <Accordion>
@@ -138,36 +135,38 @@ const PlanJourney = () => {
                       Your route will include stopovers in
                     </Typography>
                   </AccordionSummary>
-                  <AccordionDetails
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-evenly",
-                    }}
-                  >
-                    {journey.route.filter(
-                      (_, index) =>
-                        index !== journey.route.length - 1 && index !== 0
-                    ).length === 0 ? (
-                      <Typography variant="body2" color="text.primary">
-                        No stopovers on this route!
-                      </Typography>
-                    ) : (
-                      journey.route
-                        .filter(
-                          (_, index) =>
-                            index !== journey.route.length - 1 && index !== 0
-                        )
-                        .map((transfer, index) => (
-                          <Typography
-                            key={index}
-                            variant="body2"
-                            color="text.primary"
-                          >
-                            {transfer}
-                          </Typography>
-                        ))
-                    )}
-                  </AccordionDetails>
+                  <div className="">
+                    <AccordionDetails
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      {journey.route.filter(
+                        (_, index) =>
+                          index !== journey.route.length - 1 && index !== 0
+                      ).length === 0 ? (
+                        <Typography variant="body2" color="text.primary">
+                          No stopovers on this route!
+                        </Typography>
+                      ) : (
+                        journey.route
+                          .filter(
+                            (_, index) =>
+                              index !== journey.route.length - 1 && index !== 0
+                          )
+                          .map((transfer, index) => (
+                            <Typography
+                              key={index}
+                              variant="body2"
+                              color="text.primary"
+                            >
+                              {transfer}
+                            </Typography>
+                          ))
+                      )}
+                    </AccordionDetails>
+                  </div>
                 </Accordion>
               </CardActions>
             </div>
