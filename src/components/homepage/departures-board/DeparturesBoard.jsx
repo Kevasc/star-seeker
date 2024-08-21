@@ -50,7 +50,7 @@ const DeparturesBoard = () => {
                   fontSize: "1.5rem",
                 }}
               >
-                Flight Number
+                Flight Code
               </TableCell>
               <TableCell
                 align="center"
