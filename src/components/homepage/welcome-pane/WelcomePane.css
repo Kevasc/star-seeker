@@ -10,11 +10,11 @@
   flex-direction: column;
 }
 
-.titles-box{
-display: flex;
-justify-content: center;
-flex-direction: column;
-margin-bottom: 15rem;
+.titles-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10rem;
 }
 
 .section-title {
