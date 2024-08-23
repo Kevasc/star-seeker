@@ -8,7 +8,6 @@ const WelcomePane = () => {
           Welcome to <span style={{ fontWeight: 800 }}>Star Seeker</span>
         </p>
         <p className="section-subheading">Your passport to the cosmos</p>
-        
       </div>
     </div>
   );

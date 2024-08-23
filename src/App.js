@@ -3,13 +3,13 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import PlanJourney from "./routes/PlanJourney";
 import Homepage from "./routes/Homepage";
-import Status from "./routes/Status";
 import JourneyMemory from "./routes/JourneyMemory";
 import Header from "./components/header/Header";
 import { useEffect } from "react";
 import { getDepartures } from "./api/api";
 import { setDepartures } from "./redux/starSeekerSlice";
 import { useDispatch } from "react-redux";
+import DeparturesBoard from "./routes/DeparturesBoard";
 
 function Layout() {
   return (
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/status",
-        element: <Status />,
+        element: <DeparturesBoard />,
       },
       {
         path: "/journey-memory",
