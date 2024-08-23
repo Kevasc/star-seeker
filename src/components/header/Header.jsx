@@ -52,19 +52,6 @@ const Header = () => {
             </Button>
           </NavLink>
         </div>
-        <div className="nav-item">
-          <NavLink
-            style={{ color: "white" }}
-            to="journey-memory"
-            className={({ isActive }) =>
-              isActive ? "activeNavLink" : "inactiveNavLink"
-            }
-          >
-            <Button variant="outlined" color="inherit">
-              Journey Memory
-            </Button>
-          </NavLink>
-        </div>
       </div>
     </header>
   );

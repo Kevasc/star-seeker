@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import PlanJourney from "./routes/PlanJourney";
 import Homepage from "./routes/Homepage";
-import JourneyMemory from "./routes/JourneyMemory";
 import Header from "./components/header/Header";
 import { useEffect } from "react";
 import { getDepartures } from "./api/api";
@@ -36,10 +35,6 @@ const router = createBrowserRouter([
       {
         path: "/status",
         element: <DeparturesBoard />,
-      },
-      {
-        path: "/journey-memory",
-        element: <JourneyMemory />,
       },
     ],
   },
