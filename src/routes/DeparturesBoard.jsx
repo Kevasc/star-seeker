@@ -17,10 +17,12 @@ const DeparturesBoard = () => {
     //returning the functional component(DeparturesBoard)
     <div className="flights-container">
       <div className="departure-board">
-        <p className="section-title">
-          Departures <span style={{ fontWeight: 800 }}>Information</span>
-        </p>
-        <p className="section-subheading">Charting Paths to the Stars</p>
+        <div className="titles-box">
+          <p className="section-title">
+            Departures <span style={{ fontWeight: 800 }}>Information</span>
+          </p>
+          <p className="section-subheading">Charting Paths to the Stars</p>
+        </div>
       </div>
 
       <TableContainer id="table-container" component={Paper}>

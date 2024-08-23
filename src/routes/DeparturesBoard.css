@@ -6,6 +6,13 @@
   align-items: center;
 }
 
+.titles-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10rem;
+}
+
 #table-container {
   width: 80%;
 }
