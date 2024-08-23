@@ -42,13 +42,13 @@ const Header = () => {
         <div className="nav-item">
           <NavLink
             style={{ color: "white" }}
-            to="status"
+            to="departures-board"
             className={({ isActive }) =>
               isActive ? "activeNavLink" : "inactiveNavLink"
             }
           >
             <Button variant="outlined" color="inherit">
-              Status
+              Departures Board
             </Button>
           </NavLink>
         </div>
