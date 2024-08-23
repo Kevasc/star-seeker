@@ -1,4 +1,4 @@
-import WelcomePane from "../components/homepage/welcome-pane/WelcomePane";
+import WelcomePane from "../components/welcome-pane/WelcomePane";
 
 const Homepage = () => {
   return (
