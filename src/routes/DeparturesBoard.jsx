@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 const DeparturesBoard = () => {
   // Functional Component
-  // const [departures, setDepartures] = useState();
   const departures = useSelector((state) => state.starSeeker.departures);
   //useSelectors grabs the departures from the redux store
   return (
