@@ -16,8 +16,8 @@ const DeparturesBoard = () => {
     //returning the functional component(DeparturesBoard)
     <div className="flights-container">
       <div className="departure-board">
-        <div className="titles-box">
-          <p className="section-title">
+        <div className="departures-titles-box">
+          <p className="departures-titles-box">
             Departures <span style={{ fontWeight: 800 }}>Information</span>
           </p>
           <p className="section-subheading">Charting Paths to the Stars</p>

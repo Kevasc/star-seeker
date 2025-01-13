@@ -6,16 +6,16 @@
   align-items: center;
 }
 
-.titles-box {
+.departures-titles-box {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 10rem;
 }
 
 #table-container {
   width: 80%;
 }
 .departure-board {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
