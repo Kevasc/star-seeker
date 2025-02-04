@@ -39,8 +39,11 @@ const PlanJourney = () => {
   return (
     <div className="journey-image-container">
       <div className="top-section-content">
-        <p className="section-title">
-          Plan your <span style={{ fontWeight: 800 }}>journey</span>
+        <p className="journey-section-title">
+          Plan your <span style={{ fontWeight: 800 }}>Journey</span>
+          <p className="journey-section-subheading">
+            Where will the stars take you?
+          </p>
         </p>
         <div className="drop-down-boxes">
           <Box sx={{ minWidth: 350 }}>

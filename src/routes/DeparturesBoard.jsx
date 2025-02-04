@@ -15,13 +15,13 @@ const DeparturesBoard = () => {
   return (
     //returning the functional component(DeparturesBoard)
     <div className="flights-container">
-      <div className="departure-board">
-        <div className="departures-titles-box">
-          <p className="departures-titles-box">
-            Departures <span style={{ fontWeight: 800 }}>Information</span>
-          </p>
-          <p className="section-subheading">Charting Paths to the Stars</p>
-        </div>
+      <div className="departures-titles-box">
+        <p>
+          Departures <span style={{ fontWeight: 800 }}>Information</span>{" "}
+        </p>
+        <p className="departures-section-subheading">
+          Charting Paths to the Stars
+        </p>
       </div>
 
       <TableContainer id="table-container" component={Paper}>

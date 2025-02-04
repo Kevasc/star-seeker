@@ -3,19 +3,26 @@
   justify-content: center;
   background-color: black;
   flex-direction: column;
+  color: white;
   align-items: center;
 }
 
 .departures-titles-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  margin-top: 10rem;
+  font-size: 4rem;
+  margin-top: 3rem;
+  width: 100%;
 }
 
-#table-container {
-  width: 80%;
+.departures-section-subheading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
 }
-.departure-board {
-  margin-bottom: 1rem;
+#table-container {
+  width: 95%;
 }
